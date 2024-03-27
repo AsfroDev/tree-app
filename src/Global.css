@@ -5,7 +5,7 @@
   list-style: none;
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #393d3f;
+  color: #191c1d;
 }
 
 body {
@@ -15,13 +15,14 @@ body {
 #root {
   width: 100%;
   height: 100vh;
+  display:flex;
 }
 
 .container {
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: flex-start;
+  margin: 0 auto;
 }
 
 .tree {
@@ -70,12 +71,13 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  position: relative;
 }
 ul::after {
   content: "";
   position: absolute;
   width: 2px;
-  height: 127.5%;
+  height: 92.5%;
   background-color: #62929e;
-  top: 50px;
+  top: 35px;
 }

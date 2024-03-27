@@ -1,6 +1,10 @@
 import "./Global.css";
+import { Modal } from "./Modal";
 
 function App() {
+
+  
+
   return (
     <>
       <div className="container">
