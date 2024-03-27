@@ -1,26 +1,23 @@
 import "./Global.css";
 import { Modal } from "./Modal";
 import { useState } from "react";
+import ReactDOM from "react-dom";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({ x: 0, y: 0 });
 
-  const updateModalPosition = (e) => {
-    setModalPosition({ x: e.clientX, y: e.clientY });
+  const handleMouseMove = (e) => {
+    setShowModal(true);
+    setModalPosition({ x: e.clientX + -85, y: e.clientY + -68 });
+  };
+
+  const handleMouseLeave = () => {
+    setShowModal(false);
   };
 
   return (
     <>
-      {showModal && (
-        <div
-          className="modal"
-          style={{ left: modalPosition.x, top: modalPosition.y, zIndex: 2, }}
-        >
-          <Modal />
-        </div>
-      )}
-
       <div className="container">
         <div className="tree">
           <ul>
@@ -28,37 +25,15 @@ function App() {
               <div className="group">
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
-                >
-                  Person
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="group">
-                <div
-                  className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
-                >
-                  Person
-                </div>
-                <div
-                  className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
@@ -68,45 +43,15 @@ function App() {
               <div className="group">
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
-                >
-                  Person
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="group">
-                <div
-                  className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
-                >
-                  Person
-                </div>
-                <div
-                  className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
-                >
-                  Person
-                </div>
-                <div
-                  className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
@@ -116,29 +61,15 @@ function App() {
               <div className="group">
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
-                >
-                  Person
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="group">
-                <div
-                  className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
@@ -148,29 +79,22 @@ function App() {
               <div className="group">
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
-              </div>
-            </li>
-            <li>
-              <div className="group">
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
@@ -180,9 +104,15 @@ function App() {
               <div className="group">
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Person
+                </div>
+                <div
+                  className="box"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
@@ -192,17 +122,66 @@ function App() {
               <div className="group">
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Person
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="group">
+                <div
+                  className="box"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
                 <div
                   className="box"
-                  onMouseEnter={() => setShowModal(true)}
-                  onMouseLeave={() => setShowModal(false)}
-                  onMouseMove={updateModalPosition}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Person
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="group">
+                <div
+                  className="box"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Person
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="group">
+                <div
+                  className="box"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Person
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="group">
+                <div
+                  className="box"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Person
+                </div>
+                <div
+                  className="box"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   Person
                 </div>
@@ -211,6 +190,22 @@ function App() {
           </ul>
         </div>
       </div>
+
+      {showModal &&
+        ReactDOM.createPortal(
+          <div
+            className="modal"
+            style={{
+              left: modalPosition.x,
+              top: modalPosition.y,
+              zIndex: 9999, // Definindo um z-index alto
+              position: "fixed", // Garantindo que o modal seja posicionado em relação à janela do navegador
+            }}
+          >
+            <Modal />
+          </div>,
+          document.body
+        )}
     </>
   );
 }
