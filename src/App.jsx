@@ -198,8 +198,8 @@ function App() {
             style={{
               left: modalPosition.x,
               top: modalPosition.y,
-              zIndex: 9999, // Definindo um z-index alto
-              position: "fixed", // Garantindo que o modal seja posicionado em relação à janela do navegador
+              zIndex: 9999,
+              position: "fixed",
             }}
           >
             <Modal />
